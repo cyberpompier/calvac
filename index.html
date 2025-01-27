@@ -1,0 +1,99 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Vacations Sapeurs-Pompiers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur de Vacations Sapeurs-Pompiers</h1>
+
+        <div id="config-section" class="form-section">
+            <h2>Configuration des taux horaires</h2>
+            <!-- Le tableau des taux sera inséré ici par JavaScript -->
+        </div>
+
+        <div class="form-section">
+            <h2>Information du Pompier</h2>
+            <select id="grade">
+                <option value="">Sélectionnez un grade</option>
+                <option value="sapeur">Sapeur</option>
+                <option value="caporal">Caporal</option>
+                <option value="caporalChef">Caporal-Chef</option>
+                <option value="sergent">Sergent</option>
+                <option value="sergentChef">Sergent-Chef</option>
+                <option value="adjudant">Adjudant</option>
+                <option value="adjudantChef">Adjudant-Chef</option>
+                <option value="lieutenant">Lieutenant</option>
+                <option value="capitaine">Capitaine</option>
+            </select>
+        </div>
+
+        <div class="form-section">
+            <h2>Garde</h2>
+            <div class="time-inputs">
+                <div>
+                    <label>Début de garde:</label>
+                    <input type="datetime-local" id="gardeDebut">
+                </div>
+                <div>
+                    <label>Fin de garde:</label>
+                    <input type="datetime-local" id="gardeFin">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Interventions</h2>
+            <div id="interventions">
+                <div class="intervention">
+                    <div class="time-inputs">
+                        <div>
+                            <label>Début:</label>
+                            <input type="datetime-local" class="intervention-debut">
+                        </div>
+                        <div>
+                            <label>Fin:</label>
+                            <input type="datetime-local" class="intervention-fin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="ajouterIntervention" class="btn">+ Ajouter une intervention</button>
+        </div>
+
+        <button id="calculer" class="btn btn-primary">Calculer les vacations</button>
+
+        <div id="resultats" class="hidden">
+            <h2>Résultats</h2>
+            <div class="resultats-grid">
+                <div class="resultat-item">
+                    <h3>Heures de garde</h3>
+                    <p id="heuresGarde">0h</p>
+                </div>
+                <div class="resultat-item">
+                    <h3>Heures d'interventions</h3>
+                    <p id="heuresInterventions">0h</p>
+                </div>
+                <div class="resultat-item">
+                    <h3>Montant garde</h3>
+                    <p id="montantGarde">0 €</p>
+                </div>
+                <div class="resultat-item">
+                    <h3>Montant interventions</h3>
+                    <p id="montantInterventions">0 €</p>
+                </div>
+                <div class="resultat-item">
+                    <h3>Montant total</h3>
+                    <p id="montantTotal">0 €</p>
+                </div>
+            </div>
+            <div id="detailsCalcul"></div>
+        </div>
+    </div>
+    <script src="tauxHoraires.js"></script>
+    <script src="calculateur.js"></script>
+    <script src="interface.js"></script>
+</body>
+</html>
